@@ -57,9 +57,24 @@ public class StackTugasMahasiswa02 {
     }
 
     public void print() {
-        for (int i = top ; i >= 0; i--) {
+        for (int i = top ; i >= 0; i--) {  // agar urutan tampil dari top ke bawah
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas );
         }
         System.out.println("");
+    }
+
+    // Pertanyaan 4 lihat tugas terbawah (mahasiswa pertama kali mengumpulkan)
+    public Mahasiswa02 peekBottom() {
+        if (!isEmpty()) {
+            return stack[0];
+        } else {
+            System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan.");
+            return null;
+        }
+    }
+
+    // Pertanyaan 5 hitung jumlah tugas yang sudah dikumpulkan
+    public int hitungTugas() {
+        return top + 1;
     }
 }
